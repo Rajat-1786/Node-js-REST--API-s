@@ -7,11 +7,11 @@ This Repository contains the REST API's Related Work.
     Functionality: Users should be able to add tasks, set deadlines, assign priorities, and categorize tasks into projects.
 
     EndPoints:
-        1-  url => /Users , /Users/:userID
+        1-  url =>/User/:userID
             method => GET
             Description => Return the list of Users and if you pass the UserId then it will return the information related to the passed userid
         
-        2-  url => /Users
+        2-  url => /User
             method => POST
             Description => Create an user 
             RequestBody - {
