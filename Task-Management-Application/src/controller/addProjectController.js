@@ -3,8 +3,7 @@ exports.addProject = (req,res,next) => {
     console.log(req.body);
     Project.create(req.body).then(result => {
         return res.status(201).json({
-            "Id":result.id}
-        );
+            "Id":result.id});
     }).catch(error =>{
         console.log(error);
         return res.status(400);

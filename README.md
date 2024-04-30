@@ -31,8 +31,10 @@ This Repository contains the REST API's Related Work.
             Description => create a task for the user.
             RequestBody -{
                 "username": "Johndoe",
+                "projectName": "Test",
                 "taskName": "Task Name",
                 "createdAt": "Date",
+                "endDate":"Date",
                 "description" : "Description"
             }
 
