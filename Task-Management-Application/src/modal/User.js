@@ -2,11 +2,6 @@ const database = require('../dao/Mysql');
 const {Sequelize} = require('sequelize');
 
 const User = database.define('Users',{
-    id:{
-        type:Sequelize.INTEGER,
-        primaryKey: true,
-        autoIncrement: true
-    },
     name:{
         type:Sequelize.STRING,
         allowNull: false,
@@ -16,21 +11,16 @@ const User = database.define('Users',{
     },
     email:{
         type:Sequelize.STRING,
-        allowNull: false,
+        primaryKey:true,
         unique: true
     },
     password:{
         type: Sequelize.STRING,
         allowNull:false
     },
-    username:{
+    phoneNo:{
         type:Sequelize.STRING,
-        allowNull: false,
-        unique: true
-    },
-    profile_picture_url:{
-        type:Sequelize.BLOB,
-        allowNull: true
+        allowNull:true
     }
 })
 

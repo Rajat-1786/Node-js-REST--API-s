@@ -5,6 +5,6 @@ const router = express.Router();
 
 router.post('', addProjectController.addProject);
 
-router.get('/:projectName', addProjectController.getProject);
+router.get('/:email', addProjectController.getProject);
 
 module.exports = router

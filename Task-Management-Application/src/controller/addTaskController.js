@@ -2,9 +2,17 @@ const { where } = require('sequelize');
 const Task = require('../modal/Task');
 
 exports.addTask = (req,res,next) =>{
-    Task.create(req.body).then(result =>{
-        console.log(result);
-        res.status(201).json(result);
+
+    var task = {
+        taskName:req.body.taskName,
+        createdData:req.body.createdDate,
+        endData:req.body.endDate,
+        description:req.body.task.description,
+        projectId:req.body.projectId
+    }
+
+    Task.create(task).then(result =>{
+        res.status(201)
     }).catch(error => {
         res.status(404);
     })
@@ -12,10 +20,10 @@ exports.addTask = (req,res,next) =>{
 }
 
 exports.getTasks = (req,res,next) =>{
-    const projectName = req.params.projectName;
+    const projectId = req.params.projectId;
     Task.findAll({
         where:{
-            projectName: projectName
+            projectId: projectId
     }}).then(result => {
         console.log(result);
         res.status(200).json(result);
@@ -23,5 +31,4 @@ exports.getTasks = (req,res,next) =>{
         console.log(error);
         res.status(404);
     });
-    return res.status(200);
 }

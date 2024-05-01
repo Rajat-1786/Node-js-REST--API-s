@@ -23,8 +23,8 @@ const Task = database.define('Tasks',{
         type:Sequelize.STRING,
         allowNull: true
     },
-    projectName:{
-        type:Sequelize.STRING,
+    projectId:{
+        type:Sequelize.INTEGER,
         allowNull:false
     }
 });

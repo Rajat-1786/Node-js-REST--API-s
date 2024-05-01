@@ -14,7 +14,7 @@ const Project = database.define('Project',{
         primaryKey:true,
         autoIncrement:true
     },
-    name:{
+    projectName:{
         type:Sequelize.STRING,
         allowNull:false,
         unique:true
@@ -31,13 +31,9 @@ const Project = database.define('Project',{
         type:Sequelize.DATE,
         allowNull:true
     },
-    team_members:{
-        type:Sequelize.JSON,
-        allowNull:true
-    },
-    tags:{
-        type:Sequelize.JSON,
-        allowNull:true
+    email:{
+        type:Sequelize.STRING,
+        allowNull:false
     }
 })
 
