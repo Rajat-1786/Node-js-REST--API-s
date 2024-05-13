@@ -5,18 +5,18 @@ exports.addTask = (req,res,next) =>{
 
     var task = {
         taskName:req.body.taskName,
-        createdData:req.body.createdDate,
-        endData:req.body.endDate,
-        description:req.body.task.description,
+        createdDate:req.body.createdDate,
+        endDate:req.body.endDate,
+        description:req.body.description,
         projectId:req.body.projectId
     }
 
-    Task.create(task).then(result =>{
-        res.status(201)
-    }).catch(error => {
+    Task.create(task).then((result) => {
+        console.log(result);
+        res.status(201).json({"id" : result.taskId});
+    }).catch( (error) => {
         res.status(404);
     })
-    return res.status(201);
 }
 
 exports.getTasks = (req,res,next) =>{

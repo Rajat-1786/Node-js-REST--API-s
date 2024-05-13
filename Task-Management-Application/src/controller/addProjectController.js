@@ -21,7 +21,6 @@ exports.addProject = (req,res,next) => {
 
 exports.getProject = (req,res,next) => {
     email = req.params.email;
-
     Project.findAll({
         where:{
             email: email

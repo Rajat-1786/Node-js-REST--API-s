@@ -11,7 +11,7 @@ const Task = database.define('Tasks',{
         type:Sequelize.STRING,
         allowNull:false
     },
-    createdData:{
+    createdDate:{
         type:Sequelize.DATE,
         allowNull:false,
     },
